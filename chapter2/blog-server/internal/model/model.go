@@ -5,6 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 	"go-tour/chapter2/blog-server/global"
 	"go-tour/chapter2/blog-server/pkg/setting"
+	_ "gorm.io/driver/mysql"
 )
 
 type Model struct {

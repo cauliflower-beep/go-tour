@@ -5,7 +5,9 @@ import (
 	"go-tour/chapter2/blog-server/global"
 	"go-tour/chapter2/blog-server/internal/model"
 	"go-tour/chapter2/blog-server/internal/routers"
+	"go-tour/chapter2/blog-server/pkg/logger"
 	"go-tour/chapter2/blog-server/pkg/setting"
+	"gopkg.in/natefinch/lumberjack.v2"
 	"log"
 	"net/http"
 	"time"
@@ -21,6 +23,12 @@ func init() {
 	err = setupDBEngine()
 	if err != nil {
 		log.Fatalf("init.setupDBEngine err: %v", err)
+	}
+
+	// 初始化日志
+	err = setupLogger()
+	if err != nil {
+		log.Fatalf("init.setupLogger err: %v", err)
 	}
 }
 
@@ -57,6 +65,17 @@ func setupDBEngine() error {
 	return nil
 }
 
+func setupLogger() error {
+	global.Logger = logger.NewLogger(&lumberjack.Logger{
+		Filename:  global.AppSetting.LogSavePath + "/" + global.AppSetting.LogFileName + global.AppSetting.LogFileExt,
+		MaxSize:   600,
+		MaxAge:    10,
+		LocalTime: true,
+	}, "", log.LstdFlags).WithCaller(2)
+
+	return nil
+}
+
 func main() {
 	gin.SetMode(global.ServerSetting.RunMode)
 
@@ -69,5 +88,8 @@ func main() {
 		WriteTimeout:   global.ServerSetting.WriteTimeout,
 		MaxHeaderBytes: 1 << 20,
 	}
+
+	global.Logger.Infof("%s: go-programming-tour-book/%s", "xiaohuaye", "blog-server")
+
 	_ = s.ListenAndServe()
 }
