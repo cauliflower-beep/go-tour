@@ -2,6 +2,10 @@ package v1
 
 import (
 	"github.com/gin-gonic/gin"
+	"go-tour/chapter2/blog-server/global"
+	"go-tour/chapter2/blog-server/internal/service"
+	"go-tour/chapter2/blog-server/pkg/app"
+	"go-tour/chapter2/blog-server/pkg/errcode"
 )
 
 type Tag struct{}
@@ -22,7 +26,17 @@ func (t Tag) Get(c *gin.Context) {}
 // @Failure 500 {object} errcode.Error "内部错误"
 // @Router /api/v1/tags [get]
 func (t Tag) List(c *gin.Context) {
-	// app.NewResponse(c).ToErrorResponse(errcode.ServerError)
+	param := service.CountTagRequest{}
+	response := app.NewResponse(c)
+	valid, errs := app.BindAndValid(c, &param)
+	if !valid {
+		global.Logger.Errorf("app.BindAndValid errs: %v", errs)
+		response.ToErrorResponse(errcode.InvalidParams.WithDetails(errs.Errors()...))
+		return
+	}
+
+	response.ToResponse(gin.H{})
+	return
 }
 
 // @Summary 新增标签

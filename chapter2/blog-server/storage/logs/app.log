@@ -2,3 +2,12 @@
 2024/08/20 09:47:51 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724118471888132400}
 2024/08/20 09:49:27 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724118567119770900}
 2024/08/20 10:21:55 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724120515155216100}
+2024/08/20 11:23:12 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724124192203371900}
+2024/08/20 11:23:46 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1724124226266748500}
+2024/08/20 11:25:55 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724124355944409200}
+2024/08/20 11:26:03 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1724124363610350400}
+2024/08/20 11:26:07 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1724124367872805000}
+2024/08/20 11:26:17 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724124377542505300}
+2024/08/20 11:26:24 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1724124384242764600}
+2024/08/20 11:27:21 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724124441855262300}
+2024/08/20 11:27:47 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"error","message":"app.BindAndValid errs: State必须是[0 1]中的一个","time":1724124467920741600}
