@@ -3,11 +3,13 @@ package routers
 import (
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	"go-tour/chapter2/blog-server/internal/middleware"
-	v1 "go-tour/chapter2/blog-server/internal/routers/api/v1"
-
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	_ "go-tour/chapter2/blog-server/docs"
+	"go-tour/chapter2/blog-server/global"
+	"go-tour/chapter2/blog-server/internal/middleware"
+	"go-tour/chapter2/blog-server/internal/routers/api"
+	v1 "go-tour/chapter2/blog-server/internal/routers/api/v1"
+	"net/http"
 )
 
 func NewRouter() *gin.Engine {
@@ -18,6 +20,12 @@ func NewRouter() *gin.Engine {
 	r.Use(middleware.Translations())
 
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
+	upload := api.NewUpload()
+	r.POST("/upload/file", upload.UploadFile)
+
+	// 静态资源文件服务
+	r.StaticFS("/static", http.Dir(global.AppSetting.UploadSavePath))
 
 	article := v1.NewArticle()
 	tag := v1.NewTag()
