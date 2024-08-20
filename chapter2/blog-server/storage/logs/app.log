@@ -15,3 +15,4 @@
 2024/08/20 17:00:23 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724144423079473000}
 2024/08/20 17:03:05 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"error","message":"app.BindAndValid errs: AppKey为必填字段,AppSecret为必填字段","time":1724144585827812900}
 2024/08/20 17:05:43 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"error","message":"app.BindAndValid errs: AppSecret为必填字段","time":1724144743770071300}
+2024/08/20 17:14:48 {"callers":["E:/goSpace/src/go-tour/chapter2/blog-server/main.go: 29 main.init.0"],"level":"info","message":"xiaohuaye: go-programming-tour-book/blog-server","time":1724145288172847100}
