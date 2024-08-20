@@ -27,6 +27,8 @@ func NewRouter() *gin.Engine {
 	// 静态资源文件服务
 	r.StaticFS("/static", http.Dir(global.AppSetting.UploadSavePath))
 
+	r.POST("/auth", api.GetAuth)
+
 	article := v1.NewArticle()
 	tag := v1.NewTag()
 	apiV1 := r.Group("/api/v1")

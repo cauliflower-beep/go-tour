@@ -30,3 +30,8 @@ Database:
   ParseTime: True
   MaxIdleConns: 10
   MaxOpenConns: 30
+
+JWT:
+  Secret: xiaohuaye # 不能暴露给外部
+  Issuer: blog-server # 签发者
+  Expire: 7200
