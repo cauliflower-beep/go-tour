@@ -32,7 +32,7 @@ func NewRouter() *gin.Engine {
 	article := v1.NewArticle()
 	tag := v1.NewTag()
 	apiV1 := r.Group("/api/v1")
-	apiV1.Use(middleware.JWT()) // 指定该路由分组受jwt中间件约束
+	apiV1.Use(middleware.JWT(), middleware.AccessLog()) // 应用中间件到路由组
 	{
 		apiV1.POST("/tags", tag.Create)
 		apiV1.DELETE("/tags/:id", tag.Delete)
